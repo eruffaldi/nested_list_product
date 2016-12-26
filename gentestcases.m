@@ -48,8 +48,10 @@ for I=1:length(specs)
     if isfield(s,'children') && isempty(s.children) == 0
         ff = fieldnames(s.children);
         for K=1:length(ff)
-            ff{K}
             [J,v] = locatevalue(ff{K},s.values); % index of children K inside value check for nubers
+            if isempty(J)
+                continue;
+            end
             [Yc,ysc] = gentestcases(s.children.(ff{K}));
             % Yc has rows as the domain of the entity and its descendents
             % Yc has cols as the variants
@@ -91,7 +93,11 @@ function [J,v] = locatevalue(name,values)
 if iscell(values)
     if ischar(values{1})
         J = find(strcmp(values,name),1,'first');
-        v = values{J};
+        if isempty(J)
+            v = [];
+        else
+            v = values{J};  
+        end
     else
         error('unsupported content in cell');
     end
