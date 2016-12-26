@@ -1,7 +1,7 @@
 # nested_list_product
 The product (or in other terms the combination) of multiple lists generates all the combination of list elements equivalent to the elements of a tensor. In algorithm testing or in other experimental settings we need to generate products with nested lists. This is a small code in MATLAB
 
-# Extended
+# Context "Disciplined Multi-Algorithm Testing"
 The aim is to run multiple algorithms and their variants and keep track of all the outcomes for comparison. We identify the following concepts:
 
 - Case: one of the possible data input situations
@@ -15,22 +15,24 @@ The aim is to run multiple algorithms and their variants and keep track of all t
 - Measure: performance measure of the case given the execution of the Algorithm with unit of measure
 - Repetition: repetition index of the Case by AlgorithmInstance in case the Algorithm has some random aspect
 
-
 The idea is to execute all the Cases by AlgorithmInstances and build a single table. This table will have the following field (or field families):
 
+# Approach
 
+We model this with enumerations (e.g. list of algorithms), with the possibility of nested enumeration for a given value (e.g. list of variants for a given algorithm),
+and finally parameters variations (e.g. for specific version). Also datasets are an enumeration.
 
-Case Study is the Paper on Inertial Measure Review on Sensors:
+We then generate a matrix M by N, where M is any possible enumeration (NaN if not applicable) and N is the list of all possible cases
+
+## Case Study is the Paper on Inertial Measure Review on Sensors:
 
 - Algorithms: zhu, yun, young, pep, peps
 - Variants: 
   - Young: pure or perfect
   - Peppoloni: original or svd or reordered
+  - ...
 - Case:
-  - Real Case: Aug12+10+L_SA
+  - Real Case: Aug10
   - Simulation
-  - But we could integrate ICRA14, SISY ?
-- Case Parameters: $$E_{FE}$$, $$S_{FE}$$,$$S_{AA}$$
-- SubCase for Real Case: index 1..9 some of them do correspond to Case Parameters
-- Reference: Vicon data for given Case+SubCase
-- Metrics: Error (mm) and Correlation
+
+
