@@ -22,7 +22,7 @@ The idea is to execute all the Cases by AlgorithmInstances and build a single ta
 We model this with enumerations (e.g. list of algorithms), with the possibility of nested enumeration for a given value (e.g. list of variants for a given algorithm),
 and finally parameters variations (e.g. for specific version). Also datasets are an enumeration.
 
-We then generate a matrix M by N, where M is any possible enumeration (NaN if not applicable) and N is the list of all possible cases
+We then generate a matrix M by N, where M is any possible enumeration (NaN if not applicable) and N is the list of all possible cases. The matrix contains
 
 ## Case Study is the Paper on Inertial Measure Review on Sensors:
 

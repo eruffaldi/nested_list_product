@@ -10,7 +10,7 @@
 % For numeric values the children has to be expressed in textual form as
 % "v%d_%d", e.g. value of 10.2 becomes v10_2
 %
-% Output: Y is a matrix of indices [M,N] with NaN where indices are not
+% Output: Y is a matrix of indices [M,N] with 0 where indices are not
 % applicable. Each row correspond to a possible enumeration spec, whil N
 % are the overall cases
 %
@@ -70,10 +70,10 @@ for I=1:length(specs)
             YK = combvec(Y(:,sK),Yc);
             
             YnK = Y(:,sK == 0);
-            YnK = [YnK ; nan(size(Yc,1),size(YnK,2))]; % not specific 
+            YnK = [YnK ; zeros(size(Yc,1),size(YnK,2))]; % not specific 
             
             % YnotK  ,  YK repeated
-            % nan    ,  YC
+            % 0      ,  YC
             Y = [YnK,YK]; % rebuild            
         end
     end

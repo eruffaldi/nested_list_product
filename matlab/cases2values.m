@@ -9,7 +9,7 @@ yn = [];
 Yv = cell(size(Y));
 for I=1:length(ys)
     yn.(ys(I).fullname) = I;
-    q = isnan(Y(I,:)) == 0;
+    q = Y(I,:) ~= 0;
     if iscell(ys(I).values)
         Yv(I,q) = ys(I).values(Y(I,q));
     else
