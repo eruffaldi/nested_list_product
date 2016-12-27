@@ -23,8 +23,6 @@ We model this with enumerations (e.g. list of algorithms), with the possibility 
 and finally parameters variations (e.g. for specific version). Also datasets are an enumeration.
 
 <<<<<<< HEAD
-We then generate a matrix M by N, where M is any possible enumeration (0 if not applicable) and N is the list of all possible cases. The matrix contains
-=======
 We then generate a matrix M by N, where M is one of the enumeration at all levels, and N is the list of all possible cases. Each element of a row is the index of the values of the enumeration. If an enumeration is not applicable the index is 0.
 
 For example: we have a three level case
@@ -55,7 +53,6 @@ All enumerations names:
 
 The first two columns correspond to the model zhu and the two datasets. Then we have the two datasets by the two variants of young, finally the pep model with two others nesting levels (version and order). 
 
->>>>>>> 870bb4db333b2cbb704f6b01d93fa4aa7b805db8
 
 ## Case Study is the Paper on Inertial Measure Review on Sensors:
 
