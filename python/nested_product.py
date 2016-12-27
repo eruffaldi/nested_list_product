@@ -3,7 +3,6 @@
 import itertools
 import numpy as np
 
-
 class Enum:
 	"""Encapsulates an enumeration
 
@@ -25,7 +24,8 @@ class Enum:
 			if v == value:
 				return i
 		return -1
-
+	def __repr__(self):
+		return "Enum(%s,%d items)" % (self.name,len(self.values))
 
 def gencases(spec_list):
 
@@ -100,3 +100,5 @@ if __name__ == '__main__':
 	print r
 	print r.shape
 	print [(x.fullname,x.index) for x in rs]
+
+	print gencases_alt([c,m])
