@@ -22,7 +22,40 @@ The idea is to execute all the Cases by AlgorithmInstances and build a single ta
 We model this with enumerations (e.g. list of algorithms), with the possibility of nested enumeration for a given value (e.g. list of variants for a given algorithm),
 and finally parameters variations (e.g. for specific version). Also datasets are an enumeration.
 
-We then generate a matrix M by N, where M is any possible enumeration (NaN if not applicable) and N is the list of all possible cases. The matrix contains
+<<<<<<< HEAD
+We then generate a matrix M by N, where M is any possible enumeration (0 if not applicable) and N is the list of all possible cases. The matrix contains
+=======
+We then generate a matrix M by N, where M is one of the enumeration at all levels, and N is the list of all possible cases. Each element of a row is the index of the values of the enumeration. If an enumeration is not applicable the index is 0.
+
+For example: we have a three level case
+- dataset: aug sim
+- model: zhu pep young
+- model=young versions: pure, perfect
+- model=pep versions: original, svd, reorder
+- model=pep version=reorder orders: 1 2 3
+
+We obtain the following matrix: 5x16 and the corresponding list of the enumerations
+
+```
+     1     2     1     2     1     2     1     2     1     2     1     2     1     2     1     2
+     1     1     3     3     3     3     2     2     2     2     2     2     2     2     2     2
+   NaN   NaN     1     1     2     2   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+   NaN   NaN   NaN   NaN   NaN   NaN     1     1     2     2     3     3     3     3     3     3
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN     1     1     2     2     3     3
+```
+All enumerations names:
+
+```
+                              dataset: 1
+                                model: 2
+                 model_young__version: 3
+                   model_pep__version: 4
+    model_pep__version_reorder__order: 5
+```
+
+The first two columns correspond to the model zhu and the two datasets. Then we have the two datasets by the two variants of young, finally the pep model with two others nesting levels (version and order). 
+
+>>>>>>> 870bb4db333b2cbb704f6b01d93fa4aa7b805db8
 
 ## Case Study is the Paper on Inertial Measure Review on Sensors:
 
