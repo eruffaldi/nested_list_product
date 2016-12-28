@@ -20,7 +20,7 @@ This is an example of problem found in a paper we are publishing:
 
 As it can be seen the Algorithm pep has different variants than Algorithm pep. Algorithm peb has a Variant "reordered" with three different values, and it could have also some UKF parameters as in the following figure:
 
-[[NestedProduct.png]]
+![diagram](NestedProduct.png)
 
 # Context "Disciplined Multi-Algorithm Testing"
 The aim is to run multiple algorithms and their variants and keep track of all the outcomes for comparison. We identify the following concepts:
