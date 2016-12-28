@@ -18,7 +18,9 @@ This is an example of problem found in a paper we are publishing:
   - Real Case: Aug10
   - Simulation
 
-As it can be seen the Algorithm pep has different variants than Algorithm pep. Moreover Algorithm pep, Variant reordered has a parameter order with 3 different values.
+As it can be seen the Algorithm pep has different variants than Algorithm pep. Algorithm peb has a Variant "reordered" with three different values, and it could have also some UKF parameters as in the following figure:
+
+[[NestedProduct.png]]
 
 # Context "Disciplined Multi-Algorithm Testing"
 The aim is to run multiple algorithms and their variants and keep track of all the outcomes for comparison. We identify the following concepts:
